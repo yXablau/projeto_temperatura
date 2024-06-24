@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
     <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
     <header class="titulo-principal">
@@ -12,15 +14,23 @@
     </header>
 
     <div class="conteudo">
-        
         <p>Aqui você pode consultar a temperatura em tempo real e acessar nossos gráficos.</p>
         <div class="buttons">
-            <a href="grafico.html" class="button">Acessar Gráficos</a>
+            <a href="/grafico" class="button">Acessar Gráficos</a>
+            <a href="/sensores" class="button">Cadastrar um sensor</a>
         </div>
+        <div class="temperatura">
+            <h2>Temperatura Atual</h2>
+            <p id="temperatura-valor">N/A</p>
+        </div>
+        <h2>Localização de sensores</h2>
+        <div id="map" style="height: 400px;"></div>
     </div>
 
     <footer>
         <p>&copy; 2024 Consulta de Temperatura. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="/js/mapa.js" defer></script>
 </body>
 </html>

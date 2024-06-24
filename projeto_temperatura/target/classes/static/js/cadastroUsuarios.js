@@ -11,7 +11,7 @@
         });
 
         function cadastrar() {
-            fetch("http://localhost:8080/api/cadastroUsuarios", { 
+            fetch("http://localhost:8090/api/cadastroUsuarios", { 
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'

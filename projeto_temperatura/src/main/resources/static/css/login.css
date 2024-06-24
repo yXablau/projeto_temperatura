@@ -58,3 +58,10 @@ body {
 .box .submit:hover {
     background: #45a049;
 }
+
+/* Mensagem de erro */
+.error-message {
+    color: #ff6666; /* Vermelho claro */
+    font-size: 0.9em;
+    margin-top: 10px;
+}

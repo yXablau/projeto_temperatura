@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.br.projeto_temperatura.DAO.InterfaceUsuario;
 import com.br.projeto_temperatura.model.ModelUsuario;
@@ -22,7 +21,7 @@ public class ControllerUsuario {
 
     @GetMapping("/cadastroUsuarios")
     public String index(Model model) {
-        return "cadUsuarios.html"; // Certifique-se de que este arquivo está na pasta correta, normalmente em "src/main/resources/templates/"
+        return "cadUsuarios.html"; 
     }
 
     @PostMapping("/api/cadastroUsuarios")

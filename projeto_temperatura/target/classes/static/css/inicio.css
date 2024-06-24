@@ -4,6 +4,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* estilizando o mapa */
+#map {
+    height: 500px;
+    width: 100%;
+    margin-top: 20px;
+}
 
 /* Estilo do body */
 body {
@@ -72,6 +78,21 @@ div.conteudo p {
     background: #45a049;
 }
 
+/* Estilo da seção de temperatura */
+.temperatura {
+    margin-top: 20px;
+}
+
+.temperatura h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#temperatura-valor {
+    font-size: 2em;
+    color: #4CAF50;
+}
+
 /* Estilo do footer */
 footer {
     background: #333;
@@ -96,5 +117,13 @@ footer {
     .button {
         padding: 10px 20px;
         font-size: 0.9em;
+    }
+
+    .temperatura h2 {
+        font-size: 1.5em;
+    }
+
+    #temperatura-valor {
+        font-size: 1.5em;
     }
 }
