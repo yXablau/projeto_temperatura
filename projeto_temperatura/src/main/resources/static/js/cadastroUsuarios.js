@@ -34,6 +34,7 @@
             .then(function (data) {
                 console.log(data);
                 alert("Usuário Cadastrado com sucesso");
+                window.location.href = "/home";
             })
             .catch(function (err) {
                 console.log(err);

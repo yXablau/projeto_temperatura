@@ -11,9 +11,9 @@ public class Main {
         m.conectar();
 
         String topic = "espdash/automacao/sensor";
-        String msg = "teste";
+       // String msg = "teste";
 
-        //m.publicar(topic, msg);
+       // m.publicar(topic, msg);
 
         m.inscrever(topic);
            

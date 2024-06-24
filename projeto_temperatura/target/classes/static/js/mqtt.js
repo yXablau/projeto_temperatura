@@ -1,17 +1,20 @@
-const clientId = "mqttjs_" + Math.random().toString(16).substr(2, 8);
-const host = "ws://test.mosquitto.org:8080/mqtt";
+const clientId = "Pereira";
+const host = "test.mosquitto.org";
+const port = 1883; 
+const topic = "espdash/automacao/sensor";
+
+const client = new Paho.MQTT.Client(host, port, clientId);
+
 const options = {
     timeout: 3,
     onSuccess: function () {
         console.log("Conectado ao MQTT");
-        client.subscribe("espdash/automacao/sensor", { qos: 1 });
+        client.subscribe(topic, { qos: 1 });
     },
     onFailure: function (message) {
         console.error("Falha ao conectar: " + message.errorMessage);
     }
 };
-
-const client = new Paho.MQTT.Client(host, clientId);
 
 client.onConnectionLost = function (responseObject) {
     if (responseObject.errorCode !== 0) {
@@ -21,7 +24,27 @@ client.onConnectionLost = function (responseObject) {
 
 client.onMessageArrived = function (message) {
     console.log("Mensagem recebida: " + message.payloadString);
-    document.getElementById("temperatura-valor").innerText = message.payloadString + " °C";
+    document.getElementById("temperatura-valor").innerText = message.payloadString;
 };
 
-client.connect(options);
+function conectar() {
+    client.connect(options);
+}
+
+function inscrever(topic) {
+    if (client.isConnected()) {
+        client.subscribe(topic, { qos: 1 });
+    }
+}
+
+function publicar(topic, msg) {
+    const message = new Paho.MQTT.Message(msg);
+    message.qos = 1;
+    client.send(topic, message);
+}
+
+function fecharConexao() {
+    if (client.isConnected()) {
+        client.disconnect();
+    }
+}
